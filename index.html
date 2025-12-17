@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motus</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/index.css">
+    
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="header-content">
+                <h1>motus</h1>
+                <p>where is my money?</p>
+            </div>
+            <div class="profile-btn" id="profileBtn">Sign In</div>
+        </div>
+        
+        <div class="content">
+            <div class="add-expense">
+                <form id="expenseForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="item">What did you spend on?</label>
+                            <input type="text" id="item" placeholder="e.g., Coffee, Groceries, Dinner..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount (KES)</label>
+                            <input type="number" id="amount" step="0.01" placeholder="0.00" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Add Expense</button>
+                </form>
+            </div>
+
+            <div class="expenses-section">
+                <h2 class="section-title" id="monthTitle">Your Expenses</h2>
+                <div id="expenseList">
+                    <div class="empty-state">
+                        <p>No expenses yet. Add your first expense above!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-section" id="totalSection" style="display: none;">
+                <div class="total-amount" id="totalAmount">$0.00</div>
+                <div class="total-label">Total Spent</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="signInTab">Sign In</div>
+                <div class="auth-tab" id="signUpTab">Sign Up</div>
+            </div>
+            
+            <form class="auth-form active" id="signInForm">
+                <input type="email" placeholder="Email" id="signInEmail" required>
+                <input type="password" placeholder="Password" id="signInPassword" required>
+                <button type="submit" class="auth-btn">Sign In</button>
+                <div class="auth-error" id="signInError"></div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="/forgot-password" style="color: #667eea; text-decoration: none; font-size: 0.9rem;">Forgot Password?</a>
+                </div>
+            </form>
+            
+            <form class="auth-form" id="signUpForm">
+                <input type="text" placeholder="Full Name" id="signUpName" required>
+                <input type="email" placeholder="Email" id="signUpEmail" required>
+                <input type="password" placeholder="Password" id="signUpPassword" required>
+                <input type="password" placeholder="Confirm Password" id="signUpConfirmPassword" required>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <div class="auth-error" id="signUpError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/index.js"></script>
+</body>
+</html>
